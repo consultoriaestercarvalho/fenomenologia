@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fenomenologia & Existencial — Estudo para a prova</title>
+<style>
+:root{--bg:#10121a;--card:#1a1e2b;--tx:#e8eaf2;--mu:#9aa3b8;--ac:#8b7cff;--ok:#38d39f;--er:#ff6b81;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:light){:root{--bg:#f4f5fb;--card:#fff;--tx:#1b1e2b;--mu:#586079}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:820px;margin:auto;padding:16px}
+h1{font-size:1.35rem;margin:.2em 0}p.s{color:var(--mu);margin:0 0 12px}
+nav{display:flex;gap:6px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;z-index:2}
+nav button{flex:1;padding:10px;border:0;border-radius:10px;background:var(--card);color:var(--tx);font-weight:600;cursor:pointer}
+nav button.on{background:var(--ac);color:#fff}
+details{background:var(--card);border-left:5px solid var(--c);border-radius:10px;margin:8px 0;padding:2px 14px}
+summary{cursor:pointer;font-weight:700;padding:10px 0}
+details ul{margin:0 0 10px;padding-left:20px}li{margin:4px 0}b{color:var(--c)}
+.fc{background:var(--card);border-radius:16px;min-height:220px;padding:24px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;font-size:1.1rem;border:2px solid var(--ac)}
+.fc.back{border-color:var(--ok)}
+.row{display:flex;gap:8px;justify-content:center;margin:12px 0;align-items:center;flex-wrap:wrap}
+.btn{padding:10px 16px;border:0;border-radius:10px;background:var(--ac);color:#fff;font-weight:600;cursor:pointer}
+.btn.g{background:var(--card);color:var(--tx)}
+.q{background:var(--card);border-radius:14px;padding:16px}
+.o{display:block;width:100%;text-align:left;margin:8px 0;padding:12px;border-radius:10px;border:2px solid transparent;background:var(--bg);color:var(--tx);font:inherit;cursor:pointer}
+.o.ok{border-color:var(--ok)}.o.er{border-color:var(--er)}
+.ex{margin-top:10px;padding:10px;border-radius:10px;background:var(--bg);color:var(--mu)}
+.bar{height:8px;background:var(--card);border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border:1px solid var(--mu);padding:6px;vertical-align:top}
+.sc{overflow-x:auto}
+</style></head><body><main>
+<h1>🧠 Fenomenologia & Psicologia Existencial</h1>
+<p class="s">Baseado nos 8 PDFs da professora · Resumo → Flashcards → Quiz</p>
+<nav><button class="on" data-t="r">📚 Resumo</button><button data-t="f">🃏 Cards</button><button data-t="z">📝 Quiz</button></nav>
+<section id="r"></section><section id="f" hidden></section><section id="z" hidden></section>
+</main>
+<script>
+const R=[
+["#8b7cff","1. Husserl e a Fenomenologia",[
+"<b>Phainómenon</b> = aquilo que se mostra, vem à luz. Fenomenologia = método + filosofia: <b>“voltar às coisas mesmas”</b> (zur Sache selbst).",
+"<b>Intencionalidade</b> (herdada de <b>Brentano</b>): toda consciência é consciência <i>de</i> algo; objeto é sempre objeto-para-uma-consciência. Sujeito e objeto se correlacionam.",
+"<b>Epoché</b> (suspensão): colocar entre parênteses a <b>tese/atitude natural</b> e todo pré-juízo. Não nega nem duvida do mundo (≠ cético/sofista). É mudança de orientação (<i>Einstellung</i>), não ‘postura’ do terapeuta.",
+"<b>Redução fenomenológica</b> (eidética/transcendental): leva à <b>essência</b> (<i>Wesensschau</i>, intuição das essências) e à consciência pura. Fenomenologia = ciência das essências, não dos fatos.",
+"Projeto: filosofia como <b>ciência rigorosa</b>, ‘filosofia primeira’; <b>crítica ao psicologismo</b> (Prolegômenos das <i>Investigações Lógicas</i>, 1900-01); <i>A Crise das Ciências Europeias</i> (1936) critica o objetivismo.",
+"<b>Psicologia fenomenológica</b>: descritiva, eidética, intencional. Difere da fenomenologia transcendental <b>no propósito, não no método</b>: o psicólogo cuida da interioridade psíquica no mundo (basta o 1º estágio da epoché)."]],
+["#ff9f43","2. Contexto histórico: Psicologia × Filosofia (Cormanich & Castañon, 2026)",[
+"<b>Humboldt</b> (ministro, 1809): Universidade de Berlim, ideal de <b>Bildung</b>, Wissenschaft; 3 pilares: pesquisa+ensino, autonomia acadêmica, liberdade intelectual. Filosofia obrigatória a todos os cursos.",
+"<b>Gymnasium/Abitur</b>: decreto de <b>1825</b> (consulta a Hegel e Herbart) põe lógica e psicologia no currículo — a psicologia entra como disciplina propedêutica e ‘burocrática’.",
+"Cátedras de “<b>filosofia, psicologia e pedagogia</b>” → fisiologistas/físicos (Weber, Fechner, Helmholtz, Wundt) ocupam vagas de filósofos. <b>Wundt, Leipzig, 1879</b>: 1º laboratório/instituto.",
+"<b>Psicologismo</b>: lógica = “física do pensamento” (Lipps); aderentes: Brentano, Ebbinghaus, Lipps e o jovem Husserl.",
+"<b>Querela de Marburg (1912)</b>: psicólogo experimental <b>Erich Jaensch</b> assume a cátedra de <b>Cohen</b>. Natorp, Husserl, Rickert, Windelband, Riehl, Eucken → <b>Manifesto de 1913</b> (106 assinaturas); ideia de ‘sindicato dos filósofos’ foi de Husserl.",
+"Manifesto: psicologia deve ter cátedras próprias e a filosofia manter as suas. <b>Wundt (1913)</b>, <i>Die Psychologie im Kampf ums Dasein</i> (‘carta de divórcio’), defende psicologia junto à filosofia.",
+"<b>Tese</b>: fenomenologia nasce também como reação institucional e teórica à psicologia experimental; é mediadora: recusa naturalizar a consciência, mas dialoga com a psicologia descritiva. Dilthey: psicologia ‘explicativa’ × ‘descritiva e analítica’."]],
+["#38d39f","3. Heidegger e a Fenomenologia Existencial",[
+"<i>Ser e Tempo</i> (1927): pergunta pelo <b>sentido do ser</b> (não ‘o que é’). Metafísica estuda os <b>entes</b>, esquece o <b>Ser</b> (diferença ontológica).",
+"<b>Dasein (ser-aí)</b>: a existência como abertura onde o ser pode ser. Evita termos como ‘homem/pessoa/indivíduo’ (já carregam definição). Existência é <b>sempre minha</b> e o ser está <b>em jogo</b>.",
+"<b>Ser-no-mundo</b> e <b>ser-com</b>: homem e mundo são inseparáveis; sem dicotomia sujeito/objeto, interior/exterior.",
+"<b>Possibilidade/poder-ser</b>; ser <b>lançado</b> no mundo; <b>cuidado (Sorge)</b>; compreensão como projeto; inacabamento (‘culpa/dívida’).",
+"<b>Angústia</b> ≠ medo: medo tem objeto; angústia revela o nada/a finitude e chama ao poder-ser mais próprio. <b>Ser-para-a-morte</b>.",
+"<b>Propriedade × impropriedade</b>: impessoalidade (‘a gente’ / <i>das Man</i>), falatório, curiosidade, ambiguidade = decaída; modo próprio = assumir finitude e escolhas.",
+"<b>Hermenêutica</b>: passa da descrição à <b>interpretação</b>; <b>círculo hermenêutico</b>; <b>alétheia</b> (desvelamento: ocultar/desocultar). <b>Rejeita a redução husserliana</b> (neutralidade exclui a existência no mundo) e a consciência transcendental.",
+"Influência clínica: <b>Binswanger</b> (análise existencial), <b>Medard Boss</b> (Daseinsanalyse), Minkowski, Jaspers. Metafísica = ‘animal racional’ (Aristóteles)."]],
+["#ff6b81","4. Existencialismo",[
+"Precursores: <b>Kierkegaard</b> e <b>Nietzsche</b> (reação a Hegel); apogeu entre/pós guerras. Ek-sistir = ‘ser para fora’.",
+"<b>Sartre</b>: <b>“a existência precede a essência”</b> — o homem se constrói ao escolher; liberdade, responsabilidade, angústia. Outros: Marcel, Buber, Jaspers, Beauvoir, Camus.",
+"Temas: liberdade, escolha, responsabilidade, angústia, solidão, morte, sentido, autenticidade, subjetividade.",
+"<b>Rollo May</b>: existencialismo é uma <b>atitude</b>, não escola nem técnica; compreender a pessoa existente. Mais ‘pessimista’ que o humanismo (angústia e morte)."]],
+["#4dabf7","5. Psicologia Humanista (Terceira Força) e a polêmica",[
+"Surge nos EUA (anos 1950) contra o determinismo do behaviorismo (1ª) e psicanálise (2ª). Nomes: <b>Maslow, Rogers, Allport, Murphy</b>, Fromm, Bühler; Perls (Gestalt-terapia).",
+"<b>Rogers (ACP)</b>: 3 condições facilitadoras — <b>congruência, aceitação positiva incondicional, compreensão empática</b>; <b>tendência atualizante</b>; ‘campo fenomenológico’ (via Snygg, Combs; <b>Gendlin</b>: experienciação). <b>Maslow</b>: hierarquia de necessidades, autorrealização.",
+"<b>Evangelista (2020)</b>: Humanista <b>não é fenomenológico-existencial</b>, pois <b>substantiva a existência</b> (organismo, ‘animal racional’, tendência atualizante) → ontologia <b>metafísica</b>. Spiegelberg: ‘paralelo espontâneo’.",
+"<b>Feijoo</b>: ACP mantém separação homem-mundo (eu autêntico interno × meio que dificulta). Humanismo = otimismo no crescimento; ‘centrado no indivíduo’ vs. existência como coexistência e política (pólis).",
+"<b>Holanda (1997)</b>: fenomenologia = retorno, crítica, ‘recomeço radical’; <b>fenomenismo</b> (só aparências) ≠ fenomenologia (interroga o todo). ACP e Gestalt vistas como abordagens de ‘cunho fenomenológico’. Keen: 4 aspectos (fonte de hipóteses, veículo p/ humanismo, novo paradigma, resposta à crise)."]],
+["#f5c542","6. Pesquisa e clínica no Brasil (Schievano & Goto, 2024)",[
+"Revisão de <b>45 artigos</b> (2011-2021): <b>nenhum usa o método de Husserl</b>; predomina Giorgi (fenomenológico-empírico) e hermenêutico-existencial; entrevista semiestruturada.",
+"Epoché/redução são tratadas como sinônimos de <b>‘postura/atitude’</b> do terapeuta — para os autores, <b>erro</b>: epoché é exercício analítico-reflexivo, mudança de orientação.",
+"<b>Rollo May</b>: impossível empregar o método husserliano na sessão. Conclusão: método = <b>investigação/validação</b>; na clínica há <b>implicação</b>, não <b>aplicação</b> (atitude ética).",
+"Giorgi: redução <b>parcial</b> (chega ao significado da experiência, não à estrutura essencial)."]],
+["#b197fc","7. Epistemologia da Psicologia",[
+"<b>Figueiredo — Matrizes</b>: cientificistas (naturais), românticas e <b>pós-românticas</b> (vitalista, naturista [Humanista, ACP, GT], <b>compreensivas</b> [fenomenologia, historicismo idiográfico, estruturalismo]). 4 perguntas: <b>ontológica, antropológica, método, epistemológica</b>. Não há critério único de cientificidade. Fenomenologia = ‘coroamento da tradição racionalista, iluminista’.",
+"Figueiredo: ‘arqueologia’ (Matrizes) → ‘genealogia’ (<i>Invenção do Psicológico</i>), ética das práticas; ‘renovação do empirismo’; <b>metodologismo</b> criticado.",
+"<b>Cabral (2010)</b>: psicologia entre metafísica e física-matemática; behaviorismo e cognitivismo/IA tentam reduzir o psíquico ao físico; ciência moderna = matematização. Cita Husserl/Canguilhem: filosofia nada espera da psicologia.",
+"<b>Benevides (2013)</b>: tensão <b>‘psi’ × ‘logia’</b> (razão/conhecimento × erro, loucura, paixão); cisão teoria × prática; lê pela filosofia da <b>diferença</b> (Foucault, Nietzsche, Deleuze), não por Heidegger."]]
+];
+const F=[
+["O que significa phainómenon?","Aquilo que se mostra/vem à luz."],
+["Lema da fenomenologia?","“Voltar às coisas mesmas” (zur Sache selbst)."],
+["Intencionalidade","Toda consciência é consciência de algo (tese de Brentano adotada por Husserl)."],
+["Epoché","Suspensão/colocar entre parênteses a tese natural e pré-juízos; mudança de orientação, não negação do mundo."],
+["Redução fenomenológica","Passo à essência/consciência pura (eidética e transcendental); permite a Wesensschau."],
+["Psicologismo","Explicar a lógica/filosofia por leis psicológicas (‘física do pensamento’, Lipps). Criticado por Husserl nos Prolegômenos."],
+["Psicologia fenomenológica (Husserl)","Descritiva, eidética, intencional; difere da fenomenologia transcendental no propósito, não no método."],
+["Querela de Marburg","1912: Jaensch (psicólogo exp.) assume cátedra de Cohen; leva ao Manifesto dos filósofos de 1913 (106 assinaturas)."],
+["Wundt: 1879 e 1913","1879: lab/instituto em Leipzig. 1913: ‘carta de divórcio’ — defende psicologia junto à filosofia."],
+["Humboldt e Bildung","Reforma de 1809 (Berlim): formação humana integral; pesquisa+ensino, autonomia, liberdade."],
+["Dasein","Ser-aí: existência como abertura onde o ser pode ser; sempre minha e em jogo."],
+["Ser × ente","Entes: o que é. Ser: o sentido de ser. A metafísica estuda entes e esquece o Ser."],
+["Ser-no-mundo","Homem e mundo inseparáveis; existência é sempre coexistência (ser-com)."],
+["Angústia × medo (Heidegger)","Medo tem objeto determinado; angústia revela o nada e a finitude, abrindo o poder-ser."],
+["Ser-para-a-morte","A finitude como possibilidade mais própria; toda angústia é, em essência, angústia de morte."],
+["Propriedade × impropriedade","Próprio: assumir finitude e escolhas. Impróprio: ‘a gente’, falatório, curiosidade, ambiguidade."],
+["Círculo hermenêutico","Compreensão parte da experiência e retorna a ela; sem a priori ou demonstração. Passa da descrição à interpretação."],
+["Husserl × Heidegger","Husserl: redução, essências, consciência transcendental, descrição. Heidegger: rejeita a redução, ontologia hermenêutica, existência fática no mundo."],
+["Sartre","‘A existência precede a essência’: o homem se constrói pelas escolhas; liberdade e responsabilidade."],
+["Rollo May","Psicologia existencial: atitude, não escola; compreender a pessoa existente. Também diz ser impossível usar o método husserliano na sessão."],
+["Condições de Rogers","Congruência, aceitação positiva incondicional, compreensão empática; tendência atualizante."],
+["Por que ACP não é fenomenológico-existencial (Evangelista)?","Substantiva a existência (organismo, animal racional, tendência atualizante) → ontologia metafísica."],
+["Fenomenismo × fenomenologia (Holanda)","Fenomenismo fica nas aparências/descrições; fenomenologia interroga o todo e o sentido."],
+["Matrizes de Figueiredo","Cientificistas, românticas e pós-românticas; 4 perguntas: ontológica, antropológica, método, epistemológica."],
+["Achado de Schievano & Goto (2024)","Nenhum dos 45 artigos usa o método husserliano; epoché virou ‘postura’; propõem implicação, não aplicação."],
+["Binswanger e Boss","Análise existencial e Daseinsanalyse, a partir de Heidegger."],
+["Benevides: ‘psi’ × ‘logia’","Tensão constitutiva da psicologia entre razão/epistemologia e o que ela expulsa (erro, loucura, paixões)."]
+];
+const Q=[
+["Qual é a tradução de phainómenon?",["Ideia inata","Aquilo que se mostra","Essência abstrata","Comportamento observável"],1,"Fenômeno = o que se mostra, vem à luz."],
+["Intencionalidade significa que…",["o terapeuta tem boa intenção","toda consciência é consciência de algo","o objeto existe sem sujeito","a ação é voluntária"],1,"Tese de Brentano adotada por Husserl."],
+["A epoché consiste em…",["negar a existência do mundo","duvidar de tudo como o cético","colocar entre parênteses a tese natural","adotar postura acolhedora"],2,"Não nega o mundo; suspende a validade das teses naturais e teorias. Schievano & Goto criticam tratá-la como ‘postura’."],
+["O psicologismo afirma que…",["a psicologia é inútil","a lógica pode ser explicada por leis psicológicas","a filosofia é intuição","a mente é imaterial"],1,"Lipps: lógica como ‘física do pensamento’; Husserl o critica nos Prolegômenos."],
+["A Querela de Marburg (1912) envolveu…",["Wundt e Husserl","Jaensch assumindo a cátedra de Cohen","Heidegger e Sartre","Brentano e Freud"],1,"Psicólogo experimental assume cátedra de filósofo; origina o manifesto de 1913."],
+["Quantas assinaturas teve o manifesto de 1913?",["56","76","106","206"],2,"106, incluindo Husserl."],
+["A reforma que colocou psicologia e lógica nos exames do Abitur data de…",["1809","1825","1879","1913"],1,"Decreto ministerial de 1825 (Hegel e Herbart consultados)."],
+["Segundo Cormanich & Castañon, a fenomenologia surge…",["isolada da psicologia","só como teoria abstrata","também como reação às tensões institucionais da psicologia experimental","para substituir a filosofia"],2,"Co-constituição institucional e epistemológica."],
+["Qual NÃO é característica de Heidegger?",["Dasein","Redução eidética transcendental","Círculo hermenêutico","Ser-para-a-morte"],1,"Heidegger rejeita a redução husserliana."],
+["Diferença entre angústia e medo:",["são iguais","medo tem objeto; angústia revela o nada","angústia tem objeto","medo é ontológico"],1,"A angústia lança o Dasein diante de suas possibilidades e da finitude."],
+["‘A existência precede a essência’ é de…",["Husserl","Heidegger","Sartre","Rogers"],2,"Sartre, em O existencialismo é um humanismo."],
+["Para Evangelista (2020), a Psicologia Humanista não é fenomenológico-existencial porque…",["não usa estatística","substantiva a existência (organismo/animal racional)","rejeita a subjetividade","ignora Rogers"],1,"Pressuposto metafísico: tendência atualizante, organismo."],
+["Qual NÃO é condição facilitadora de Rogers?",["Congruência","Aceitação positiva incondicional","Compreensão empática","Interpretação diretiva"],3,"São três: congruência, aceitação e empatia."],
+["Na revisão de Schievano & Goto (2024), o que se encontrou?",["Todos usam o método husserliano","Nenhum usa o método husserliano propriamente dito","Só estudos teóricos","Predomínio de Heidegger"],1,"Predominam Giorgi e hermenêuticos; 29 empíricos × 16 teóricos."],
+["Para Rollo May, o existencialismo é…",["uma escola","um sistema de terapia","uma atitude","um conjunto de técnicas"],2,"‘Uma atitude, uma abordagem’."],
+["Matrizes de Figueiredo: a fenomenologia está em qual submatriz?",["Cientificista","Vitalista","Naturista","Compreensiva"],3,"Compreensivas: fenomenologia, historicismo idiográfico, estruturalismo."],
+["Holanda diferencia fenomenismo de fenomenologia porque o fenomenismo…",["interroga a totalidade","fica nas aparências","é eidético","é heideggeriano"],1,"Fenomenologia questiona o todo e o sentido."],
+["Wundt em 1913 (‘carta de divórcio’)…",["defendeu a separação total","defendeu manter psicologia junto à filosofia","apoiou Jaensch sem ressalvas","aderiu à fenomenologia"],1,"Contra psicologia puramente experimental e contra aproximá-la da medicina."]
+];
+const $=s=>document.querySelector(s);
+$('#r').innerHTML=R.map(([c,t,l])=>`<details style="--c:${c}"><summary>${t}</summary><ul>${l.map(x=>`<li>${x}</li>`).join('')}</ul></details>`).join('')+
+`<details style="--c:#ff9f43" open><summary>⚖️ Quadro comparativo</summary><div class="sc"><table><tr><th></th><th>Husserl</th><th>Heidegger</th><th>Humanista (Rogers)</th></tr>
+<tr><td>Pergunta</td><td>Essência dos fenômenos</td><td>Sentido do ser</td><td>Crescimento da pessoa</td></tr>
+<tr><td>Método</td><td>Epoché + redução</td><td>Hermenêutica</td><td>Experiência / relação</td></tr>
+<tr><td>Homem</td><td>Consciência intencional</td><td>Dasein, ser-no-mundo</td><td>Organismo com tendência atualizante</td></tr>
+<tr><td>Crítica</td><td>Heidegger: exclui a existência fática</td><td>Metafísica do ser esquecido</td><td>Substantiva a existência</td></tr></table></div></details>`;
+let i=0,b=false,deck=F.slice();
+function fc(){$('#f').innerHTML=`<p class="s" style="text-align:center">${i+1} / ${deck.length}</p><div class="fc ${b?'back':''}" id="card">${b?deck[i][1]:'<b>'+deck[i][0]+'</b>'}</div><div class="row"><button class="btn g" id="pv">←</button><button class="btn g" id="sh">🔀 Embaralhar</button><button class="btn" id="nx">→</button></div>`;
+$('#card').onclick=()=>{b=!b;fc()};$('#pv').onclick=()=>{i=(i-1+deck.length)%deck.length;b=false;fc()};$('#nx').onclick=()=>{i=(i+1)%deck.length;b=false;fc()};$('#sh').onclick=()=>{deck.sort(()=>Math.random()-.5);i=0;b=false;fc()}}
+let qi=0,sc=0;
+function qz(){const z=$('#z');if(qi>=Q.length){const p=Math.round(sc/Q.length*10);z.innerHTML=`<div class="q"><h2>Resultado: ${sc}/${Q.length} (nota ${p}/10)</h2><p>${sc==Q.length?'🏆 Perfeito!':'Revise os tópicos errados no Resumo e refaça.'}</p><button class="btn" id="rs">Refazer</button></div>`;$('#rs').onclick=()=>{qi=0;sc=0;qz()};return}
+const [q,o,a,e]=Q[qi];z.innerHTML=`<div class="bar"><i style="width:${qi/Q.length*100}%"></i></div><p class="s">Questão ${qi+1}/${Q.length} · acertos: ${sc}</p><div class="q"><b>${q}</b>${o.map((t,k)=>`<button class="o" data-k="${k}">${t}</button>`).join('')}<div id="ex"></div></div>`;
+document.querySelectorAll('.o').forEach(bt=>bt.onclick=()=>{const k=+bt.dataset.k;document.querySelectorAll('.o').forEach((x,j)=>{x.disabled=true;if(j==a)x.classList.add('ok')});if(k==a)sc++;else bt.classList.add('er');$('#ex').innerHTML=`<div class="ex">${k==a?'✅ Correto. ':'❌ Não. '}${e}</div><div class="row"><button class="btn" id="nq">Próxima →</button></div>`;$('#nq').onclick=()=>{qi++;qz()}})}
+document.querySelectorAll('nav button').forEach(n=>n.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x==n));['r','f','z'].forEach(k=>$('#'+k).hidden=k!=n.dataset.t)});
+fc();qz();
+</script></body></html>
