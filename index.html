@@ -26,7 +26,7 @@ details ul{margin:0 0 10px;padding-left:20px}li{margin:4px 0}details p{margin:.5
 .bar{height:8px;background:var(--card);border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
 table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{border:1px solid var(--mu);padding:6px;vertical-align:top}
 .sc{overflow-x:auto}#gate{max-width:560px;margin:24px auto;padding:20px}.st{font-size:.8rem;padding:2px 8px;border-radius:8px;background:var(--bg)}.adm td button{padding:4px 8px;border:0;border-radius:6px;cursor:pointer;background:var(--ac);color:#fff}.adm .rv{background:var(--er)}
-</style></head><body><main hidden>
+</style></head><body><main>
 <h1>🧠 Fenomenologia & Psicologia Existencial</h1>
 <p class="s">Baseado nos 8 PDFs da professora · Resumo → Flashcards → Quiz</p>
 <nav><button class="on" data-t="e">🧩 Explicado</button><button data-t="r">📚 Resumo</button><button data-t="f">🃏 Cards</button><button data-t="z">📝 Quiz</button></nav>
@@ -159,73 +159,5 @@ const [q,o,a,e]=Q[qi];z.innerHTML=`<div class="bar"><i style="width:${qi/Q.lengt
 document.querySelectorAll('.o').forEach(bt=>bt.onclick=()=>{const k=+bt.dataset.k;document.querySelectorAll('.o').forEach((x,j)=>{x.disabled=true;if(j==a)x.classList.add('ok')});if(k==a)sc++;else bt.classList.add('er');$('#ex').innerHTML=`<div class="ex">${k==a?'✅ Correto. ':'❌ Não. '}${e}</div><div class="row"><button class="btn" id="nq">Próxima →</button></div>`;$('#nq').onclick=()=>{qi++;qz()}})}
 document.querySelectorAll('nav button').forEach(n=>n.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x==n));['e','r','f','z'].forEach(k=>$('#'+k).hidden=k!=n.dataset.t)});
 fc();qz();
-</script>
-<div id="gate" class="q">Verificando acesso…</div>
-<script>
-(async()=>{
-const gate=document.getElementById('gate'),main=document.querySelector('main');
-const say=h=>{gate.innerHTML=h};
-let user=null,db=null;
-try{user=await claude.use('user');db=await claude.use('db')}catch(e){}
-if(!user||!db){say('<b>🔒 Acesso restrito</b><p>Entre na sua conta do Claude (gratuita) e abra o link novamente.</p>');return}
-const id=await user.id();
-const isAdm=(await user.isOwner())||(await user.canEdit());
-const open=()=>{gate.remove();main.hidden=false};
-if(isAdm){open();adminUI();return}
-async function check(){
-  say('Verificando acesso…');
-  try{
-    const now=Date.now();
-    await db.doc('visits/'+id).set({last:now});
-    await db.collection('visits/'+id+'/log').doc(String(now)).set({t:now});
-  }catch(e){say('<b>🔒 Não foi possível registrar seu acesso</b><p>Peça ao vendedor para te convidar com nível <b>Colaborador</b> e abra o link novamente.</p>');return}
-  let ok=false;
-  try{ok=(await db.doc('allowed/'+id).get()).exists}catch(e){}
-  if(ok){open();return}
-  say('<b>⏳ Acesso aguardando liberação</b><p>Seu acesso foi registrado. Avise o vendedor para liberar e toque em verificar.</p><button class="btn" id="vv">Verificar de novo</button>');
-  document.getElementById('vv').onclick=check;
-}
-check();
-
-function adminUI(){
-  const nav=document.querySelector('nav');
-  const sec=document.createElement('section');sec.id='adm';sec.hidden=true;main.append(sec);
-  const b=document.createElement('button');b.textContent='🔒 Admin';nav.append(b);
-  nav.querySelectorAll('button').forEach(x=>{if(x!==b)x.addEventListener('click',()=>{sec.hidden=true;b.classList.remove('on')})});
-  b.onclick=()=>{nav.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));['e','r','f','z'].forEach(k=>document.getElementById(k).hidden=true);sec.hidden=false;render()};
-  async function render(){
-    sec.textContent='Carregando…';
-    let vs=[],al=new Set();
-    try{vs=(await db.collection('visits').get()).docs;al=new Set((await db.collection('allowed').get()).docs.map(d=>d.id))}catch(e){sec.textContent='Erro ao ler dados: '+(e.code||e.message);return}
-    const ids=vs.map(d=>d.id);let pf={};
-    try{pf=await user.profiles(ids)}catch(e){}
-    const rows=[];
-    for(const d of vs){
-      let n=0;try{n=(await db.collection('visits/'+d.id+'/log').get()).docs.length}catch(e){}
-      rows.push({id:d.id,last:(d.data()||{}).last||0,n});
-    }
-    rows.sort((a,b)=>b.last-a.last);
-    sec.innerHTML='';
-    const h=document.createElement('div');h.className='q';
-    h.innerHTML='<b>Painel do administrador</b><p class="s">Pessoas distintas que abriram: <b>'+rows.length+'</b> · Liberadas: <b>'+rows.filter(r=>al.has(r.id)).length+'</b> · Aguardando: <b>'+rows.filter(r=>!al.has(r.id)).length+'</b></p><p class="s">Só quem você liberar vê o conteúdo. Seus próprios acessos de administrador não são contados.</p>';
-    const w=document.createElement('div');w.className='sc adm';const t=document.createElement('table');
-    t.innerHTML='<tr><th>Pessoa</th><th>Aberturas</th><th>Último acesso</th><th>Status</th><th></th></tr>';
-    for(const r of rows){
-      const tr=t.insertRow();
-      tr.insertCell().textContent=((pf[r.id]&&pf[r.id].name)||'Sem nome')+' ('+r.id.slice(0,6)+')';
-      tr.insertCell().textContent=r.n;
-      tr.insertCell().textContent=r.last?new Date(r.last).toLocaleString('pt-BR'):'-';
-      const ok=al.has(r.id);
-      tr.insertCell().textContent=ok?'✅ liberado':'⏳ aguardando';
-      const bt=document.createElement('button');bt.textContent=ok?'Revogar':'Liberar';if(ok)bt.className='rv';
-      bt.onclick=async()=>{bt.disabled=true;try{ok?await db.doc('allowed/'+r.id).delete():await db.doc('allowed/'+r.id).set({t:Date.now()})}catch(e){alert('Falhou: '+(e.code||e.message))}render()};
-      tr.insertCell().append(bt);
-    }
-    if(!rows.length){const tr=t.insertRow();const c=tr.insertCell();c.colSpan=5;c.textContent='Ninguém abriu ainda.'}
-    w.append(t);const rf=document.createElement('button');rf.className='btn g';rf.textContent='↻ Atualizar';rf.onclick=render;
-    sec.append(h,w,rf);
-  }
-}
-})();
 </script>
 </body></html>
